@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		2C3ED528246446A400A87201 /* SplashMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ED527246446A400A87201 /* SplashMainViewController.swift */; };
 		2C3ED54A24644A6A00A87201 /* SplashNavigatonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ED54924644A6A00A87201 /* SplashNavigatonController.swift */; };
 		2C3ED54C24644C9C00A87201 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2C3ED54B24644C9C00A87201 /* Podfile */; };
+		2CE4728C2465011F00290883 /* AccountManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4728B2465011F00290883 /* AccountManger.swift */; };
+		2CE4728E2465029A00290883 /* CommonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4728D2465029A00290883 /* CommonHeader.swift */; };
+		2CE4729424653B3C00290883 /* SplashBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4729324653B3C00290883 /* SplashBaseViewModel.swift */; };
 		6EEC515CDA36E1AD041A7846 /* Pods_Splash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE21E0ACA34805B88EE5454 /* Pods_Splash.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +29,10 @@
 		2C3ED51D2464453D00A87201 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C3ED527246446A400A87201 /* SplashMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashMainViewController.swift; sourceTree = "<group>"; };
 		2C3ED54924644A6A00A87201 /* SplashNavigatonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashNavigatonController.swift; sourceTree = "<group>"; };
-		2C3ED54B24644C9C00A87201 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		2C3ED54B24644C9C00A87201 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2CE4728B2465011F00290883 /* AccountManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManger.swift; sourceTree = "<group>"; };
+		2CE4728D2465029A00290883 /* CommonHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHeader.swift; sourceTree = "<group>"; };
+		2CE4729324653B3C00290883 /* SplashBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBaseViewModel.swift; sourceTree = "<group>"; };
 		9EF4F776F3364C64AD5D63B6 /* Pods-Splash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splash.release.xcconfig"; path = "Target Support Files/Pods-Splash/Pods-Splash.release.xcconfig"; sourceTree = "<group>"; };
 		ADE21E0ACA34805B88EE5454 /* Pods_Splash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE3004CA7EC54834FE5F64AE /* Pods-Splash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splash.debug.xcconfig"; path = "Target Support Files/Pods-Splash/Pods-Splash.debug.xcconfig"; sourceTree = "<group>"; };
@@ -50,7 +56,6 @@
 				AE3004CA7EC54834FE5F64AE /* Pods-Splash.debug.xcconfig */,
 				9EF4F776F3364C64AD5D63B6 /* Pods-Splash.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -76,6 +81,8 @@
 		2C3ED50E2464453C00A87201 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				2CE472892465005300290883 /* Utils */,
+				2CE472682464F67200290883 /* Network */,
 				2C3ED5252464468400A87201 /* Module */,
 				2C3ED5242464459D00A87201 /* Resource */,
 				2C3ED5232464457A00A87201 /* AppEntry */,
@@ -117,6 +124,39 @@
 				2C3ED54924644A6A00A87201 /* SplashNavigatonController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		2CE472682464F67200290883 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2CE4729224653B1400290883 /* BaseNetwork */,
+				2CE4728D2465029A00290883 /* CommonHeader.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2CE472892465005300290883 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2CE4728A246500C200290883 /* Account */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2CE4728A246500C200290883 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				2CE4728B2465011F00290883 /* AccountManger.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		2CE4729224653B1400290883 /* BaseNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				2CE4729324653B3C00290883 /* SplashBaseViewModel.swift */,
+			);
+			path = BaseNetwork;
 			sourceTree = "<group>";
 		};
 		550649DBB62457CA4C4027F2 /* Frameworks */ = {
@@ -243,6 +283,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C3ED54A24644A6A00A87201 /* SplashNavigatonController.swift in Sources */,
+				2CE4728E2465029A00290883 /* CommonHeader.swift in Sources */,
+				2CE4729424653B3C00290883 /* SplashBaseViewModel.swift in Sources */,
+				2CE4728C2465011F00290883 /* AccountManger.swift in Sources */,
 				2C3ED5102464453C00A87201 /* AppDelegate.swift in Sources */,
 				2C3ED528246446A400A87201 /* SplashMainViewController.swift in Sources */,
 				2C3ED5122464453C00A87201 /* SceneDelegate.swift in Sources */,
