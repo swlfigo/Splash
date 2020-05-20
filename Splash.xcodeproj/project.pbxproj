@@ -14,6 +14,10 @@
 		2C3ED528246446A400A87201 /* SplashMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ED527246446A400A87201 /* SplashMainViewController.swift */; };
 		2C3ED54A24644A6A00A87201 /* SplashNavigatonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ED54924644A6A00A87201 /* SplashNavigatonController.swift */; };
 		2C3ED54C24644C9C00A87201 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2C3ED54B24644C9C00A87201 /* Podfile */; };
+		2C682BCD2475030C00A0D0F1 /* SplashNetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C682BCC2475030C00A0D0F1 /* SplashNetworkResult.swift */; };
+		2C682BCF247508A000A0D0F1 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C682BCE247508A000A0D0F1 /* SplashViewModel.swift */; };
+		2C682BD12475236600A0D0F1 /* SplashPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C682BD02475236600A0D0F1 /* SplashPageViewModel.swift */; };
+		2CC80BE72473BCD100997534 /* SplashNetworkParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC80BE62473BCD100997534 /* SplashNetworkParams.swift */; };
 		2CE4728C2465011F00290883 /* AccountManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4728B2465011F00290883 /* AccountManger.swift */; };
 		2CE4728E2465029A00290883 /* CommonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4728D2465029A00290883 /* CommonHeader.swift */; };
 		2CE4729424653B3C00290883 /* SplashBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4729324653B3C00290883 /* SplashBaseViewModel.swift */; };
@@ -30,6 +34,10 @@
 		2C3ED527246446A400A87201 /* SplashMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashMainViewController.swift; sourceTree = "<group>"; };
 		2C3ED54924644A6A00A87201 /* SplashNavigatonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashNavigatonController.swift; sourceTree = "<group>"; };
 		2C3ED54B24644C9C00A87201 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2C682BCC2475030C00A0D0F1 /* SplashNetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashNetworkResult.swift; sourceTree = "<group>"; };
+		2C682BCE247508A000A0D0F1 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		2C682BD02475236600A0D0F1 /* SplashPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPageViewModel.swift; sourceTree = "<group>"; };
+		2CC80BE62473BCD100997534 /* SplashNetworkParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashNetworkParams.swift; sourceTree = "<group>"; };
 		2CE4728B2465011F00290883 /* AccountManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManger.swift; sourceTree = "<group>"; };
 		2CE4728D2465029A00290883 /* CommonHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHeader.swift; sourceTree = "<group>"; };
 		2CE4729324653B3C00290883 /* SplashBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBaseViewModel.swift; sourceTree = "<group>"; };
@@ -155,6 +163,10 @@
 			isa = PBXGroup;
 			children = (
 				2CE4729324653B3C00290883 /* SplashBaseViewModel.swift */,
+				2CC80BE62473BCD100997534 /* SplashNetworkParams.swift */,
+				2C682BCC2475030C00A0D0F1 /* SplashNetworkResult.swift */,
+				2C682BCE247508A000A0D0F1 /* SplashViewModel.swift */,
+				2C682BD02475236600A0D0F1 /* SplashPageViewModel.swift */,
 			);
 			path = BaseNetwork;
 			sourceTree = "<group>";
@@ -283,12 +295,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C3ED54A24644A6A00A87201 /* SplashNavigatonController.swift in Sources */,
+				2C682BCD2475030C00A0D0F1 /* SplashNetworkResult.swift in Sources */,
 				2CE4728E2465029A00290883 /* CommonHeader.swift in Sources */,
 				2CE4729424653B3C00290883 /* SplashBaseViewModel.swift in Sources */,
 				2CE4728C2465011F00290883 /* AccountManger.swift in Sources */,
+				2C682BCF247508A000A0D0F1 /* SplashViewModel.swift in Sources */,
 				2C3ED5102464453C00A87201 /* AppDelegate.swift in Sources */,
+				2CC80BE72473BCD100997534 /* SplashNetworkParams.swift in Sources */,
 				2C3ED528246446A400A87201 /* SplashMainViewController.swift in Sources */,
 				2C3ED5122464453C00A87201 /* SceneDelegate.swift in Sources */,
+				2C682BD12475236600A0D0F1 /* SplashPageViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
