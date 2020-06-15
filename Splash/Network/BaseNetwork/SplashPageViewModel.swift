@@ -35,6 +35,10 @@ class SplashPageViewModel: SplashViewModel {
         otherParam.updateValue(pageIndex, forKey: "page")
         
         param.params = otherParam
+        
+        
+        
+        
     }
 }
 
