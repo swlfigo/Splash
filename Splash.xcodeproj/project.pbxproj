@@ -22,6 +22,9 @@
 		2CE4728C2465011F00290883 /* AccountManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4728B2465011F00290883 /* AccountManger.swift */; };
 		2CE4728E2465029A00290883 /* CommonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4728D2465029A00290883 /* CommonHeader.swift */; };
 		2CE4729424653B3C00290883 /* SplashBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4729324653B3C00290883 /* SplashBaseViewModel.swift */; };
+		2CF0F020249875BE0098F45E /* SplashMainPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF0F01F249875BE0098F45E /* SplashMainPageViewModel.swift */; };
+		2CF0F023249893F20098F45E /* SplashMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF0F022249893F20098F45E /* SplashMainModel.swift */; };
+		2CF0F02624989FAC0098F45E /* SplashImageURLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF0F02524989FAC0098F45E /* SplashImageURLModel.swift */; };
 		6EEC515CDA36E1AD041A7846 /* Pods_Splash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE21E0ACA34805B88EE5454 /* Pods_Splash.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +46,9 @@
 		2CE4728B2465011F00290883 /* AccountManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManger.swift; sourceTree = "<group>"; };
 		2CE4728D2465029A00290883 /* CommonHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHeader.swift; sourceTree = "<group>"; };
 		2CE4729324653B3C00290883 /* SplashBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBaseViewModel.swift; sourceTree = "<group>"; };
+		2CF0F01F249875BE0098F45E /* SplashMainPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashMainPageViewModel.swift; sourceTree = "<group>"; };
+		2CF0F022249893F20098F45E /* SplashMainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashMainModel.swift; sourceTree = "<group>"; };
+		2CF0F02524989FAC0098F45E /* SplashImageURLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashImageURLModel.swift; sourceTree = "<group>"; };
 		9EF4F776F3364C64AD5D63B6 /* Pods-Splash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splash.release.xcconfig"; path = "Target Support Files/Pods-Splash/Pods-Splash.release.xcconfig"; sourceTree = "<group>"; };
 		ADE21E0ACA34805B88EE5454 /* Pods_Splash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE3004CA7EC54834FE5F64AE /* Pods-Splash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splash.debug.xcconfig"; path = "Target Support Files/Pods-Splash/Pods-Splash.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 		2C3ED5252464468400A87201 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				2CF0F01B2498608E0098F45E /* Main */,
 				2C3ED5262464468A00A87201 /* Base */,
 			);
 			path = Module;
@@ -130,6 +137,7 @@
 		2C3ED5262464468A00A87201 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				2CF0F02424989F840098F45E /* Model */,
 				2C3ED527246446A400A87201 /* SplashMainViewController.swift */,
 				2C3ED54924644A6A00A87201 /* SplashNavigatonController.swift */,
 			);
@@ -172,6 +180,39 @@
 				2C2D60D42497500700FB5C8A /* SplashNetworkingManager.swift */,
 			);
 			path = BaseNetwork;
+			sourceTree = "<group>";
+		};
+		2CF0F01B2498608E0098F45E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2CF0F021249893D70098F45E /* Model */,
+				2CF0F01C249873100098F45E /* ViewModel */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2CF0F01C249873100098F45E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2CF0F01F249875BE0098F45E /* SplashMainPageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2CF0F021249893D70098F45E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2CF0F02424989F840098F45E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2CF0F022249893F20098F45E /* SplashMainModel.swift */,
+				2CF0F02524989FAC0098F45E /* SplashImageURLModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		550649DBB62457CA4C4027F2 /* Frameworks */ = {
@@ -300,6 +341,9 @@
 				2C3ED54A24644A6A00A87201 /* SplashNavigatonController.swift in Sources */,
 				2C682BCD2475030C00A0D0F1 /* SplashNetworkResult.swift in Sources */,
 				2CE4728E2465029A00290883 /* CommonHeader.swift in Sources */,
+				2CF0F023249893F20098F45E /* SplashMainModel.swift in Sources */,
+				2CF0F020249875BE0098F45E /* SplashMainPageViewModel.swift in Sources */,
+				2CF0F02624989FAC0098F45E /* SplashImageURLModel.swift in Sources */,
 				2CE4729424653B3C00290883 /* SplashBaseViewModel.swift in Sources */,
 				2CE4728C2465011F00290883 /* AccountManger.swift in Sources */,
 				2C682BCF247508A000A0D0F1 /* SplashViewModel.swift in Sources */,

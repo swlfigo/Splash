@@ -26,8 +26,27 @@ class SplashNetworkingManager:NSObject{
         case .put:
             method = .put
         }
-        return AF.request(netParams.urlString, method: method, parameters: netParams.params, encoding: URLEncoding.default, headers: nil, interceptor: nil, requestModifier: nil).responseJSON { (response) in
-            
+        
+        var httpHeader : [HTTPHeader] = []
+        if let header = netParams.header {
+            for (key , value) in header {
+                let httpH = HTTPHeader.init(name: key, value: value)
+                httpHeader.append(httpH)
+            }
+        }
+        
+        return AF.request(netParams.urlString, method: method, parameters: netParams.params, encoding: URLEncoding.default, headers: HTTPHeaders.init(httpHeader), interceptor: nil, requestModifier: nil).responseJSON { (response) in
+            if response.value != nil {
+                let result = SplashNetworkingResult.init(code: 200, message: response.description, responseData: response.data, object: response.value)
+                if let complete = success{
+                    complete(result)
+                }
+            }else{
+                let result = SplashNetworkingResult.init(code: 404, message: response.description, responseData: nil, object: response.data)
+                if let complete = fail{
+                    complete(result)
+                }
+            }
         }
     }
 }

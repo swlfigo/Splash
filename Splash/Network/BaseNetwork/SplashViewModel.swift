@@ -49,6 +49,7 @@ class SplashViewModel {
        func typeModels<T: Decodable>(type: T.Type, jsonData: Data) -> [Any]? {
            do {
                let decoder = JSONDecoder()
+            //Codeable
                let decodedData = try decoder.decode(type, from: jsonData)
                return decodedData as? [Any]
            } catch let error {

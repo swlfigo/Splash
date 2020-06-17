@@ -20,5 +20,6 @@ struct SplashNetworkingFetchParams {
     var urlString : String = ""
     var method : SplashNetworkingMethod = .get
     var params : [String:Any]?
+    var header : [String:String]?
     
 }

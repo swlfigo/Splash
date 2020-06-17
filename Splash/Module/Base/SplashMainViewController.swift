@@ -12,8 +12,15 @@ class SplashMainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let vm = SplashMainPageViewModel()
+        vm.loadModels(reload: true, success: { (newModels:[SplashMainModel], SplashNetworkingResult) in
+            print("Success")
+        }) { (String, SplashNetworkingResult) in
+            print("Fail")
+        }
+        
+        
     }
     
 
