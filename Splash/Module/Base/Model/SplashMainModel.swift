@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SplashMainModel:Codable {
+struct SplashMainModel:Codable,Identifiable {
     var id:String?
     var height:Int?
     var width:Int?

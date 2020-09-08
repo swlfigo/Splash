@@ -13,4 +13,5 @@ class SplashMainPageViewModel: SplashPageViewModel {
         let fetchParams = SplashNetworkingFetchParams.init(urlString: "https://api.unsplash.com/photos", method: .get, params: ["per_page":30])
         return fetchParams
     }
+    
 }
