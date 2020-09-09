@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.1.0)
+  - CHTCollectionViewWaterfallLayout/Swift (0.9.8)
   - Kingfisher (5.13.4):
     - Kingfisher/Core (= 5.13.4)
   - Kingfisher/Core (5.13.4)
@@ -8,6 +9,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - CHTCollectionViewWaterfallLayout/Swift
   - Kingfisher
   - MJRefresh
   - SnapKit
@@ -15,16 +17,18 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CHTCollectionViewWaterfallLayout
     - Kingfisher
     - MJRefresh
     - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  CHTCollectionViewWaterfallLayout: 5f241d2480ab4939aa0d1ad4981de9eef1fbe60d
   Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
   MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 52d5f16b078e396ce5c64195b1017e63970df214
+PODFILE CHECKSUM: f44c16825ebb566d7f3f1a75810ba590deb80ef8
 
 COCOAPODS: 1.9.1

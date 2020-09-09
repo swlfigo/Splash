@@ -10,9 +10,10 @@ import UIKit
 import Kingfisher
 class SplashListPhotoCollectionViewCell: UICollectionViewCell {
     
-    var model:SplashMainModel?{
+    var layout:SplashListPhotoLayout?{
         didSet{
-            self.photoImageView.kf.setImage(with: URL(string: self.model?.urls?.regular ?? ""))
+            let model = layout?.model
+            self.photoImageView.kf.setImage(with: URL(string: model?.urls?.regular ?? ""))
         }
     }
     
@@ -25,7 +26,8 @@ class SplashListPhotoCollectionViewCell: UICollectionViewCell {
         photoImageView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        
+        photoImageView.layer.cornerRadius = 12
+        photoImageView.layer.masksToBounds = true
     }
     
     required init?(coder: NSCoder) {

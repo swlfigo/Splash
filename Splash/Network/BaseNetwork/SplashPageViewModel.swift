@@ -13,7 +13,7 @@ class SplashPageViewModel: SplashViewModel {
     var pageIndex: Int = 0
     var pageModels: [Any] = []
     
-    func loadModels<T: Decodable>(reload:Bool, success:@escaping(_ model:[T] , _ result : SplashNetworkingResult) -> Void, fail:@escaping SplashViewModelFailBlock) -> Void {
+    func loadModels<T: Decodable>(reload:Bool, success:@escaping(_ model:[T] , _ result : SplashNetworkingResult) -> Void, fail:@escaping (SplashViewModelFailBlock)) -> Void {
         
         
         if let operation = self.operation {

@@ -7,4 +7,5 @@ target 'Splash' do
     pod 'SnapKit'
     pod 'Kingfisher'
     pod 'MJRefresh'
+    pod 'CHTCollectionViewWaterfallLayout/Swift'
 end
