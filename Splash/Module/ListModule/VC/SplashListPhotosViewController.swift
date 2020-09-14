@@ -15,6 +15,7 @@ class SplashListPhotosViewController: UIViewController {
     let vm = SplashMainPageViewModel()
     
     var layouts = [SplashListPhotoLayout]()
+    let topPager = SplashMainImagePagerView.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class SplashListPhotosViewController: UIViewController {
         let layout = CHTCollectionViewWaterfallLayout()
         layout.minimumColumnSpacing = 30.0
         layout.minimumInteritemSpacing = 10.0
+        layout.headerHeight = 263
         layout.sectionInset = UIEdgeInsets.init(top: 0, left: 30, bottom: 0, right: 30)
         mainCollectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: layout)
         mainCollectionView.backgroundColor = self.view.backgroundColor
@@ -33,6 +35,15 @@ class SplashListPhotosViewController: UIViewController {
             make.width.height.equalToSuperview()
             make.edges.equalToSuperview()
         }
+        mainCollectionView.contentInsetAdjustmentBehavior = .never
+        mainCollectionView.addSubview(topPager)
+        topPager.snp.makeConstraints { (make) in
+            make.width.top.equalToSuperview()
+            make.height.equalTo(263)
+        }
+        topPager.getRandomPhoto()
+        
+        
         self.topRefresh()
     }
     
@@ -79,7 +90,7 @@ extension SplashListPhotosViewController : CHTCollectionViewDelegateWaterfallLay
         let pModel = layouts[indexPath.row].model
         let ratio = Double(pModel?.width ?? 0) / Double(pModel?.height ?? 1)
         
-        let imgUrl = pModel?.urls?.regular ?? ""
+        let imgUrl = pModel?.urls?.small ?? ""
         let pmDic =  imgUrl.urlParameters
         if let dic = pmDic , let w = dic["w"]?.doubleValue {
             
@@ -92,9 +103,7 @@ extension SplashListPhotosViewController : CHTCollectionViewDelegateWaterfallLay
             return CGSize.init(width: collectionVWidth, height: ceil(Double(collectionVHeight)))
         }
         return CGSize.zero
-        
-        
-        
+
     }
     
     

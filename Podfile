@@ -8,4 +8,5 @@ target 'Splash' do
     pod 'Kingfisher'
     pod 'MJRefresh'
     pod 'CHTCollectionViewWaterfallLayout/Swift'
+    pod 'LookinServer', :configurations => ['Debug']
 end

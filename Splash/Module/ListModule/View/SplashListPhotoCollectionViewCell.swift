@@ -13,7 +13,7 @@ class SplashListPhotoCollectionViewCell: UICollectionViewCell {
     var layout:SplashListPhotoLayout?{
         didSet{
             let model = layout?.model
-            self.photoImageView.kf.setImage(with: URL(string: model?.urls?.regular ?? ""))
+            self.photoImageView.kf.setImage(with: URL(string: model?.urls?.small ?? ""))
         }
     }
     

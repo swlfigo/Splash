@@ -13,7 +13,7 @@ import Kingfisher
 class SplashMainImagePagerView : UIView{
     let vm = SplashMainImagePagerPageViewModel.init()
     
-    let presentingV = UIImageView.init()
+    let presentingV = SplashMainImagePagerContainerV.init()
     
     var slideCount = 0
     
@@ -27,7 +27,7 @@ class SplashMainImagePagerView : UIView{
         presentingV.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        
+        self.clipsToBounds = true
     }
     
     required init?(coder: NSCoder) {
@@ -41,15 +41,17 @@ class SplashMainImagePagerView : UIView{
             if newModels.count > 0 {
                 self.timer?.invalidate()
                 self.models = newModels
-                self.presentingV.kf.setImage(with: URL.init(string: newModels.first?.urls?.regular ?? ""))
+                self.presentingV.alpha = 0
+                self.presentingV.model = self.models.first
                 self.slideCount = 0
                 if newModels.count > 1 {
-                    KingfisherManager.shared.retrieveImage(with: URL.init(string: newModels[1].urls?.regular ?? "")!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
-                        
+                    KingfisherManager.shared.retrieveImage(with: URL.init(string: newModels[1].urls?.small ?? "")!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
+                        self.timer = Timer.init(timeInterval: 5, target: self, selector: #selector(self.tikTok), userInfo: nil, repeats: true)
+                        RunLoop.current.add(self.timer! , forMode: .default)
+                        UIView .animate(withDuration: 3) {
+                            self.presentingV.alpha = 1
+                        }
                     })
-                    self.timer = Timer.init(timeInterval: 5, target: self, selector: #selector(self.tikTok), userInfo: nil, repeats: true)
-                    RunLoop.current.add(self.timer! , forMode: .default)
-                    
                 }
             }
         }) { (String, SplashNetworkingResult) in
@@ -63,25 +65,28 @@ class SplashMainImagePagerView : UIView{
             slideCount = 0
         }
         if slideCount + 1 < self.models.count {
-            KingfisherManager.shared.retrieveImage(with: URL.init(string: self.models[slideCount + 1].urls?.regular ?? "")!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
+            KingfisherManager.shared.retrieveImage(with: URL.init(string: self.models[slideCount + 1].urls?.small ?? "")!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
                 
             })
         }
         
         //Animating
-        let tempImgV = UIImageView.init()
+        let tempImgV = SplashMainImagePagerContainerV.init()
         self.addSubview(tempImgV)
-        tempImgV.alpha = 0
-        tempImgV.kf.setImage(with: URL.init(string: self.models[slideCount].urls?.regular ?? ""))
         tempImgV.snp.makeConstraints { (make) in
+            make.width.height.equalTo(self.presentingV)
             make.edges.equalTo(self.presentingV)
         }
+        tempImgV.setNeedsLayout()
+        tempImgV.layoutIfNeeded()
+        tempImgV.alpha = 0
+        tempImgV.model = self.models[slideCount]
         UIView.animate(withDuration: 3, animations: {
             tempImgV.alpha = 1
             self.presentingV.alpha = 0
         }) { (finish) in
-            
-            self.presentingV.kf.setImage(with: URL.init(string: self.models[self.slideCount].urls?.regular ?? ""))
+
+            self.presentingV.model = self.models[self.slideCount]
             self.presentingV.alpha = 1
             tempImgV.removeFromSuperview()
         }
